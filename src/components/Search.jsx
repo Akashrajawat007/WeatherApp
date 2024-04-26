@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react"
 import { TbMapPinSearch } from "react-icons/tb"
+import capitalize from "../utils/capitalize"
 
 function Search({ city, cityHandler }) {
   const [temp, setTemp] = useState(city)
@@ -25,7 +26,7 @@ function Search({ city, cityHandler }) {
       <div className="icon">
         <TbMapPinSearch
           size={30}
-          onClick={() => cityHandler(temp)}
+          onClick={() => cityHandler(capitalize(temp))}
         />
       </div>
     </div>
