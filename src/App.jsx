@@ -2,12 +2,15 @@ import { useState, useEffect } from "react"
 import Container from "./components/Container"
 import Search from "./components/Search"
 import getLocation from "./utils/getLocation"
+import axios from "axios"
 import "./App.css"
 
 function App() {
   const [city, setCity] = useState("")
   const [location, setLocation] = useState("")
+  const [details, setDetails] = useState(null)
   const [error, setError] = useState(null)
+  const API_KEY = import.meta.env.VITE_API_KEY
 
   useEffect(() => {
     getLocation(setError, setLocation)
