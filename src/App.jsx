@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import Container from "./components/Container"
 import Search from "./components/Search"
 import getLocation from "./utils/getLocation"
-import axios from "axios"
+import getDetails from "./utils/getDetails"
+
 import "./App.css"
 
 function App() {
@@ -15,6 +16,15 @@ function App() {
   useEffect(() => {
     getLocation(setError, setLocation)
   }, [])
+
+  useEffect(() => {
+    if (location || city) {
+      const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${
+        city ? city : `${location?.latitude},${location?.longitude}`
+      }`
+      getDetails(url, setDetails, setError)
+    }
+  }, [location, city])
 
   return (
     <div className="app">
