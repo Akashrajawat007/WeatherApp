@@ -1,6 +1,9 @@
-# WeatherApp![Icon](https://res.cloudinary.com/akash-dev/image/upload/c_scale,w_80/v1714147037/warewise/weather_impzxc.png)
+# WeatherApp![Icon](https://res.cloudinary.com/akash-dev/image/upload/c_scale,w_50/v1714147037/warewise/weather_impzxc.png)
 
 The **WeatherApp** is a **web application** built using **React.js**. It leverages the **www.weatherapi.com** API to retrieve detailed weather information for a given city.
+
+## Live Demo
+Check out [Live Demo](https://weather-app-topaz-six-15.vercel.app/) deployed on Vercel.
 
 ## Prerequisites
 
