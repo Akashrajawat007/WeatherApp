@@ -6,7 +6,6 @@ import CityInfo from "./components/CityInfo"
 import AppBody from "./components/AppBody"
 import getLocation from "./utils/getLocation"
 import getDetails from "./utils/getDetails"
-
 import "./App.css"
 
 function App() {
