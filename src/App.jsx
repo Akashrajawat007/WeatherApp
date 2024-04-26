@@ -8,27 +8,24 @@ function App() {
   const [city, setCity] = useState("")
   const [location, setLocation] = useState("")
   const [error, setError] = useState(null)
-  
+
   useEffect(() => {
     getLocation(setError, setLocation)
   }, [])
 
   return (
-    <>
-      <div className="app">
-        <h2>Weather App</h2>
-        <Container>
-          <Search city={city} cityHandler={setCity} />
-          {location === "" && city === "" ? (
+    <div className="app">
+      <h2>Weather App</h2>
+      <Container>
+        <Search city={city} cityHandler={setCity} />
+        {location === "" && city === "" ? (
           <p>Allow Location or Search by City name manually</p>
         ) : (
-          <div>
-            Body
-          </div>
+          <div>Body</div>
         )}
-        </Container>
-      </div>
-    </>
+      </Container>
+      {error && <h4>Error: {error}</h4>}
+    </div>
   )
 }
 
