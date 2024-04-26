@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Header from "./components/Header"
 import Container from "./components/Container"
 import Search from "./components/Search"
 import CityInfo from "./components/CityInfo"
@@ -30,9 +31,9 @@ function App() {
 
   return (
     <div className="app">
-      <h2>Weather App</h2>
+      <Header />
       <Container>
-        <Search city={city} cityHandler={setCity} />
+        <Search cityHandler={setCity} />
         {location === "" && city === "" ? (
           <p>Allow Location or Search by City name manually</p>
         ) : (

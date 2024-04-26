@@ -2,14 +2,15 @@ import React, { useState, useRef } from "react"
 import { TbMapPinSearch } from "react-icons/tb"
 import capitalize from "../utils/capitalize"
 
-function Search({ city, cityHandler }) {
-  const [temp, setTemp] = useState(city)
+function Search({cityHandler }) {
   const inputRef = useRef(null)
+  const [temp, setTemp] = useState("")
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       cityHandler(capitalize(temp))
       inputRef.current.blur()
+      setTemp("")
     }
   }
 
@@ -26,7 +27,10 @@ function Search({ city, cityHandler }) {
       <div className="icon">
         <TbMapPinSearch
           size={30}
-          onClick={() => cityHandler(capitalize(temp))}
+          onClick={() => {
+            cityHandler(capitalize(temp))
+            setTemp("")
+          }}
         />
       </div>
     </div>
