@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from "react"
+import Container from "./components/Container"
+import "./App.css"
 
 function App() {
-
   return (
     <>
-      <div>
-        <p>App</p>
+      <div className="app">
+        <h2>Weather App</h2>
+        <Container>
+          
+        </Container>
       </div>
     </>
   )
