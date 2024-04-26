@@ -53,3 +53,33 @@
     align-items: center;
   }
 }
+
+.app-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.glass-box {
+  width: max-content;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.5px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+.line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}

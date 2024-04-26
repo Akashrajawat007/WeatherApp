@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Container from "./components/Container"
 import Search from "./components/Search"
 import CityInfo from "./components/CityInfo"
+import AppBody from "./components/AppBody"
 import getLocation from "./utils/getLocation"
 import getDetails from "./utils/getDetails"
 
@@ -35,16 +36,17 @@ function App() {
         {location === "" && city === "" ? (
           <p>Allow Location or Search by City name manually</p>
         ) : (
-          <div>
-          {details && (
-            <div>
-              <CityInfo
-                city={details?.location.name}
-                country={details?.location.country}
-              />
-            </div>
-          )}
-        </div>
+          <>
+            {details && (
+              <div>
+                <CityInfo
+                  city={details?.location.name}
+                  country={details?.location.country}
+                />
+                <AppBody data={details} />
+              </div>
+            )}
+          </>
         )}
       </Container>
       {error && <h4>Error: {error}</h4>}
