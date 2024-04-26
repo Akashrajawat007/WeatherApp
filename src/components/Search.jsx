@@ -9,7 +9,7 @@ function Search({ city, cityHandler }) {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       cityHandler(capitalize(temp))
-      inputRef.current.blur();
+      inputRef.current.blur()
     }
   }
 
