@@ -16,12 +16,16 @@ function App() {
   const [error, setError] = useState(null)
   const API_KEY = import.meta.env.VITE_API_KEY
 
+  //Getting Location from User's Browser
   useEffect(() => {
     getLocation(setError, setLocation)
   }, [])
 
+  //Getting Weather Details everytime value of Location or City changes
   useEffect(() => {
+    //Checking if value of Location or City is available to avaoid bad API calls
     if (location || city) {
+      //If value of City is available then using City name else using Location co-ordinates to make API call
       const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${
         city ? city : `${location?.latitude},${location?.longitude}`
       }`
@@ -34,6 +38,7 @@ function App() {
       <Header />
       <Container>
         <Search cityHandler={setCity} />
+        {/* Checking if User's location is fetched or not */}
         {location === "" && city === "" ? (
           <p>Allow Location or Search by City name manually</p>
         ) : (
